@@ -35,6 +35,10 @@ bool sendWithRetry(const void* buf, uint32_t timeout_ms);
 // Turn the ESP32's own 2.4 GHz radios off; no-op on AVR.
 void disableWifiBt();
 
+// Serial.begin(115200), waiting up to USB_WAIT_MS for a native-USB host to attach.
+constexpr uint32_t USB_WAIT_MS = 3000;
+void serialBegin();
+
 // Non-blocking serial line reader. Returns true once a full line is in `buf`.
 bool readSerialLine(char* buf, size_t len);
 
