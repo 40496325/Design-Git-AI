@@ -1,5 +1,14 @@
 # 02 — Wiring
 
+Diagrams (draw.io, editable — open in draw.io / diagrams.net or the VS Code Draw.io extension):
+
+| Node | draw.io | PNG |
+|------|---------|-----|
+| Receiver – NodeMCU-32S | [`wiring/wiring_rx_nodemcu32s.drawio`](wiring/wiring_rx_nodemcu32s.drawio) | ![RX wiring](wiring/wiring_rx_nodemcu32s.png) |
+| Transmitter – ESP32-C3 (page 1) / Arduino Nano fallback (page 2) | [`wiring/wiring_tx_esp32c3.drawio`](wiring/wiring_tx_esp32c3.drawio) | ![TX wiring](wiring/wiring_tx_esp32c3.png) ![TX fallback wiring](wiring/wiring_tx_nano_fallback.png) |
+
+The diagrams are generated from the pin tables below by `tools/gen_wiring_drawio.py`; if you change a pin here (and in `firmware/lib/linktest/board_pins.h`), re-run the script and re-export the PNGs.
+
 nRF24L01(+) module header (looking at the component side, header at the top-left, key notch/`GND` square pad):
 
 ```
