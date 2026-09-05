@@ -88,7 +88,8 @@ REII_nRF24_Link_Characterisation/
 │   ├── 03_test_procedure.md      ← distance sweep protocol, controls, CSV schema
 │   ├── 04_channel_selection.md   ← survey method, WiFi ↔ nRF channel mapping, scoring
 │   ├── 05_recommended_config.md  ← deliverable template (fill from results)
-│   └── 06_progress_summary.md    ← checkpoint status report: goals vs. what was built / measured
+│   ├── 06_progress_summary.md    ← checkpoint status report: goals vs. what was built / measured
+│   └── evidence/                 ← verbatim serial-monitor logs of the bring-up + annotated proof
 ├── firmware/                     ← PlatformIO project (Arduino framework + RF24 library)
 │   ├── platformio.ini            ← envs: rx_nodemcu32s, scanner_nodemcu32s, tx_esp32c3, tx_nano
 │   ├── src/main.cpp              ← role dispatch
