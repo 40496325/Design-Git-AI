@@ -165,7 +165,11 @@ static void listenForever(const TestParams& p) {
 
 static void handleLine(char* line) {
   char* tok = strtok(line, " ");
-  if (!tok) return;
+  if (!tok) {  // bare Enter: re-show who we are (banner may have been missed on USB-CDC)
+    printBanner("RX");
+    Serial.println(F("READY"));
+    return;
+  }
   if (!strcmp(tok, "INFO")) {
     radio.printPrettyDetails();
   } else if (!strcmp(tok, "CTRL")) {
@@ -226,8 +230,7 @@ static void handleLine(char* line) {
 }
 
 void roleSetup() {
-  Serial.begin(115200);
-  delay(500);
+  serialBegin();
   disableWifiBt();
   printBanner("RX");
   if (!radioBegin(ADDR_RX_NODE, ADDR_TX_NODE)) {

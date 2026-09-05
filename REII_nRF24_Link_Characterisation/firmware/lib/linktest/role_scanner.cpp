@@ -81,7 +81,11 @@ static void fullScan(uint16_t sweeps) {
 
 static void handleLine(char* line) {
   char* tok = strtok(line, " ");
-  if (!tok) return;
+  if (!tok) {
+    printBanner("SCANNER");
+    Serial.println(F("READY"));
+    return;
+  }
   if (!strcmp(tok, "SCAN")) {
     const char* sw = strtok(nullptr, " ");
     long sweeps = sw ? atol(sw) : DEFAULT_SWEEPS;
@@ -98,8 +102,7 @@ static void handleLine(char* line) {
 }
 
 void roleSetup() {
-  Serial.begin(115200);
-  delay(500);
+  serialBegin();
   disableWifiBt();
   printBanner("SCANNER");
   if (!radioBegin(ADDR_RX_NODE, ADDR_TX_NODE)) {

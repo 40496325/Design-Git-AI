@@ -161,6 +161,15 @@ void disableWifiBt() {
 #endif
 }
 
+void serialBegin() {
+  Serial.begin(115200);
+  // Native-USB boards (ESP32-C3 CDC) drop everything printed before the host
+  // opens the port; give it a moment, but never stall a power-bank-fed node.
+  const uint32_t t0 = millis();
+  while (!Serial && millis() - t0 < USB_WAIT_MS) delay(10);
+  delay(300);
+}
+
 bool readSerialLine(char* buf, size_t len) {
   static size_t pos = 0;
   while (Serial.available()) {
