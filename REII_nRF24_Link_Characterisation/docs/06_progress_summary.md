@@ -82,6 +82,8 @@ One code base, three roles chosen at build time (`-DROLE_RX / _TX / _SCANNER`), 
 
 Setup: NodeMCU-32S (RX, COM10) and ESP32-C3 (TX, COM9) both USB-powered from the laptop, ~1 m apart,
 both PA+LNA modules with antennas fitted and 10 µF + 100 nF at the module header.
+The verbatim serial-monitor captures behind every quote below are in `evidence/` (see
+`evidence/README.md` for the line-by-line proof).
 
 ### 3.1 SPI / power check — both boards
 Boot output on the RX (identical on the TX apart from the role and swapped addresses):
