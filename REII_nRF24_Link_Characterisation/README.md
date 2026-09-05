@@ -81,6 +81,7 @@ REII_nRF24_Link_Characterisation/
 ├── docs/
 │   ├── 01_hardware_selection.md  ← which micro does what, power budget, PA+LNA pitfalls
 │   ├── 02_wiring.md              ← pin maps for all three boards
+│   ├── wiring/                   ← draw.io wiring diagrams (TX / RX separately) + PNG exports
 │   ├── 03_test_procedure.md      ← distance sweep protocol, controls, CSV schema
 │   ├── 04_channel_selection.md   ← survey method, WiFi ↔ nRF channel mapping, scoring
 │   └── 05_recommended_config.md  ← deliverable template (fill from results)
@@ -93,6 +94,7 @@ REII_nRF24_Link_Characterisation/
 │   ├── run_test.py               ← drives RX over serial, appends CSV rows
 │   ├── plot_packet_loss.py       ← PER vs distance per data rate (+ ACK retries plot)
 │   ├── channel_analysis.py       ← reads scanner output, scores channels, plots occupancy
+│   ├── gen_wiring_drawio.py      ← regenerates docs/wiring/*.drawio from the pin maps
 │   └── make_synthetic_data.py    ← fake data to dry-run the two scripts above (never commit its output)
 └── results/                      ← CSV + PNG outputs (committed once measured)
 ```
