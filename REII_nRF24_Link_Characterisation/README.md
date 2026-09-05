@@ -110,6 +110,16 @@ pio run -e tx_nano       -t upload         # fallback transmitter
 pio device monitor -b 115200
 ```
 
+VS Code route (no CLI): install the *PlatformIO IDE* extension, **File → Open Folder…** on
+`REII_nRF24_Link_Characterisation/firmware` (the folder that holds `platformio.ini`), wait for
+"PlatformIO: Project initialised", then in the blue status bar click the env name (defaults to
+`rx_nodemcu32s`) to pick an environment, and use the → (Upload) and 🔌 (Serial Monitor) buttons.
+Upload auto-detects the port when only one board is plugged in; with both boards connected add
+`upload_port = COMx` / `/dev/ttyUSBx` to the env in `platformio.ini` or unplug the other board.
+The monitor echoes what you type and sends the line on Enter (`monitor_echo` / `send_on_enter`),
+so commands like `INFO`, `PING`, `LISTEN 1000 76 LOW` can be typed directly; press Enter (any
+line) to stop a `LISTEN` / `BEACON`.
+
 Python side:
 
 ```bash
