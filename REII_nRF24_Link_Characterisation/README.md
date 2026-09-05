@@ -15,6 +15,9 @@ Checkpoint task (from the REII checkpoint slide):
 
 "Bring this" deliverables → `results/` (plots + `RECOMMENDED_CONFIG` table).
 
+**Where we are:** see `docs/06_progress_summary.md` — goal-by-goal status with the measured bring-up
+evidence (both boards up, control link `PONG,1,3`, 1 m smoke test PER 0–0.5 % at 250k/1M/2M).
+
 ---
 
 ## 1. What we have and what we use
@@ -84,7 +87,8 @@ REII_nRF24_Link_Characterisation/
 │   ├── wiring/                   ← draw.io wiring diagrams (TX / RX separately) + PNG exports
 │   ├── 03_test_procedure.md      ← distance sweep protocol, controls, CSV schema
 │   ├── 04_channel_selection.md   ← survey method, WiFi ↔ nRF channel mapping, scoring
-│   └── 05_recommended_config.md  ← deliverable template (fill from results)
+│   ├── 05_recommended_config.md  ← deliverable template (fill from results)
+│   └── 06_progress_summary.md    ← checkpoint status report: goals vs. what was built / measured
 ├── firmware/                     ← PlatformIO project (Arduino framework + RF24 library)
 │   ├── platformio.ini            ← envs: rx_nodemcu32s, scanner_nodemcu32s, tx_esp32c3, tx_nano
 │   ├── src/main.cpp              ← role dispatch
